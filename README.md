@@ -1,3 +1,21 @@
+# About this fork
+
+This fork of [stlink](https://github.com/stlink-org/stlink) is an attempt to port the project to C++17 that enables usage as a library with proper exports.
+
+As this project relies on `libusb-1.0`:
+
+- **Windows (MSVC)**: `$PATH`, `$PATH/lib` and `$PATH/lib64` will be checked for `libusb-1.0.dll` and if not found, [libusb-cmake](https://github.com/libusb/libusb-cmake) repo will be used on-the-spot for proper building and installation.
+
+- **Windows (MinGW)**: Preinstalled versions will be ignored., [libusb-cmake](https://github.com/libusb/libusb-cmake) repo will be used on-the-spot for proper building and installation.
+
+- **\*nix (includes BSD derivatives)**: having libusb installed is required.
+
+This fork will allow for both MSVC and MinGW building, since windows (MSVC) require licensing to write proprietary code that uses STLink Library.
+
+I personally have almost no available OSes and devices to test this, so, feel free to submit tickets and PRs.
+
+---
+
 # Open source version of the STMicroelectronics STLINK Tools
 
 [![BSD licensed](https://img.shields.io/badge/license-BSD-blue.svg)](https://raw.githubusercontent.com/hyperium/hyper/master/LICENSE)
